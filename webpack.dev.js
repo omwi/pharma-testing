@@ -36,5 +36,6 @@ export default {
     port: 3000,
     static: './dist',
     hot: true,
+    historyApiFallback: true,
   },
 };
