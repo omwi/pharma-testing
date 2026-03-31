@@ -1,15 +1,11 @@
 import { NavLink, Outlet } from 'react-router';
 
+import Header from '../ui/header.jsx';
+
 export default function AppLayout() {
   return (
     <>
-      <header>
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/dashboard">Dashboard</NavLink>
-          <NavLink to="/processes">Processes</NavLink>
-        </nav>
-      </header>
+      <Header />
       <main>
         <Outlet />
       </main>

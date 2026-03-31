@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const processesSlice = createSlice({
+const processesSlice = createSlice({
   name: 'processes',
   initialState: [],
   reducers: {
