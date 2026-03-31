@@ -1,13 +1,11 @@
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
-import path from 'node:path';
+import { mergeWithRules } from 'webpack-merge';
 
-const dirname = import.meta.dirname;
+import commonConfig, { mergeConfig } from './webpack.common.js';
 
 /** @type {import('webpack').Configuration} */
-export default {
-  extends: path.resolve(dirname, './webpack.common.js'),
+export default mergeWithRules(mergeConfig)(commonConfig, {
   mode: 'development',
-
   output: {
     filename: '[name].bundle.js',
   },
@@ -30,7 +28,7 @@ export default {
       },
       {
         test: /\.css/,
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader'],
       },
     ],
   },
@@ -41,4 +39,4 @@ export default {
     historyApiFallback: true,
   },
   plugins: [new ReactRefreshPlugin()],
-};
+});

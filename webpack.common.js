@@ -4,6 +4,15 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 const dirname = import.meta.dirname;
 
+export const mergeConfig = {
+  module: {
+    rules: {
+      test: 'match',
+      use: 'prepend',
+    },
+  },
+};
+
 /** @type {import('webpack').Configuration} */
 export default {
   entry: './src/index.js',
@@ -13,6 +22,10 @@ export default {
   },
   module: {
     rules: [
+      {
+        test: /\.css/,
+        use: ['css-loader'],
+      },
       {
         test: /\.(png|svg|jpg|jpeg|gif|mp4)$/i,
         type: 'asset/resource',

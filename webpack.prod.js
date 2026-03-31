@@ -1,13 +1,11 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import path from 'node:path';
+import { mergeWithRules } from 'webpack-merge';
 
-const dirname = import.meta.dirname;
+import commonConfig, { mergeConfig } from './webpack.common.js';
 
 /** @type {import('webpack').Configuration} */
-export default {
-  extends: path.resolve(dirname, './webpack.common.js'),
+export default mergeWithRules(mergeConfig)(commonConfig, {
   mode: 'production',
-
   output: {
     filename: '[name].[contenthash].js',
     assetModuleFilename: 'assets/[name].[contenthash][ext]',
@@ -25,9 +23,9 @@ export default {
       },
       {
         test: /\.css/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [MiniCssExtractPlugin.loader],
       },
     ],
   },
   plugins: [new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' })],
-};
+});
