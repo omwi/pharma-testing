@@ -21,5 +21,5 @@ export default {
       },
     ],
   },
-  plugins: [new MiniCssExtractPlugin()],
+  plugins: [new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' })],
 };
