@@ -24,7 +24,7 @@ export default {
     rules: [
       {
         test: /\.css/,
-        use: ['css-loader'],
+        use: ['css-loader', 'postcss-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif|mp4)$/i,
