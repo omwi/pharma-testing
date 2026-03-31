@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 
-import { useLoginMutation } from '@/app/api.js';
+import { useLoginMutation } from '@/app/api';
 
 import * as styles from './auth-form.module.css';
 

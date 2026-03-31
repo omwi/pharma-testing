@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 
-import { selectCurrentUser } from '@/features/auth/auth-slice.js';
+import { selectCurrentUser } from '@/features/auth/auth-slice';
 
-import { useGetMeQuery } from '../api.js';
+import { useGetMeQuery } from '../api';
 
 export default function HomeRoute() {
   const user = useSelector(selectCurrentUser);

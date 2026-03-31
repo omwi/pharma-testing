@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { loggedOut, tokenReceived } from '@/features/auth/auth-slice.js';
+import { loggedOut, tokenReceived } from '@/features/auth/auth-slice';
 
 const TOKEN_EXPIRE_MINS = 15;
 

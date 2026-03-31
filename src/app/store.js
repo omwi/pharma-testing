@@ -14,7 +14,7 @@ import localStorage from 'redux-persist/es/storage';
 import authReducer from '@/features/auth/auth-slice';
 import processesReducer from '@/features/processes/processes-slice';
 
-import { api } from './api.js';
+import { api } from './api';
 
 const persistConfig = {
   key: 'auth',

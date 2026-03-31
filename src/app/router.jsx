@@ -7,14 +7,14 @@ import {
   useLocation,
 } from 'react-router';
 
-import AppLayout from '@/components/layouts/app-layout.jsx';
-import { useAuth } from '@/hooks/useAuth.js';
+import AppLayout from '@/components/layouts/app-layout';
+import { useAuth } from '@/hooks/useAuth';
 
-import DashboardRoute from './routes/dashboard.jsx';
-import HomeRoute from './routes/home.jsx';
-import LoginRoute from './routes/login.jsx';
-import ProcessDetailsRoute from './routes/process-details.jsx';
-import ProcessesRoute from './routes/processes.jsx';
+import DashboardRoute from './routes/dashboard';
+import HomeRoute from './routes/home';
+import LoginRoute from './routes/login';
+import ProcessDetailsRoute from './routes/process-details';
+import ProcessesRoute from './routes/processes';
 
 function ProtedectedRoute() {
   const location = useLocation();

@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router';
 
-import { api } from '@/app/api.js';
-import { loggedOut } from '@/features/auth/auth-slice.js';
+import { api } from '@/app/api';
+import { loggedOut } from '@/features/auth/auth-slice';
 
 export default function Header() {
   const dispatch = useDispatch();
