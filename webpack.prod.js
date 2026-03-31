@@ -16,6 +16,14 @@ export default {
   module: {
     rules: [
       {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        resolve: {
+          fullySpecified: false,
+        },
+        use: ['babel-loader'],
+      },
+      {
         test: /\.css/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },

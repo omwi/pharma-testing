@@ -14,14 +14,6 @@ export default {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        resolve: {
-          fullySpecified: false,
-        },
-        exclude: /node_modules/,
-        use: ['babel-loader'],
-      },
-      {
         test: /\.(png|svg|jpg|jpeg|gif|mp4)$/i,
         type: 'asset/resource',
       },

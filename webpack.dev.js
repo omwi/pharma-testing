@@ -16,6 +16,9 @@ export default {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
+        resolve: {
+          fullySpecified: false,
+        },
         use: [
           {
             loader: 'babel-loader',
@@ -31,11 +34,11 @@ export default {
       },
     ],
   },
-  plugins: [new ReactRefreshPlugin()],
   devServer: {
     port: 3000,
     static: './dist',
     hot: true,
     historyApiFallback: true,
   },
+  plugins: [new ReactRefreshPlugin()],
 };
