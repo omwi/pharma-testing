@@ -24,7 +24,18 @@ export default {
     rules: [
       {
         test: /\.css/,
-        use: ['css-loader', 'postcss-loader'],
+        use: [
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                auto: true,
+                exportLocalsConvention: 'camelCase',
+              },
+            },
+          },
+          'postcss-loader',
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif|mp4)$/i,
