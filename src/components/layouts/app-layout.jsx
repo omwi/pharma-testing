@@ -1,5 +1,7 @@
 import { NavLink, Outlet } from 'react-router';
 
+import Container from '../ui/container';
+import Footer from '../ui/footer';
 import Header from '../ui/header';
 
 export default function AppLayout() {
@@ -7,8 +9,11 @@ export default function AppLayout() {
     <>
       <Header />
       <main>
-        <Outlet />
+        <Container>
+          <Outlet />
+        </Container>
       </main>
+      <Footer />
     </>
   );
 }

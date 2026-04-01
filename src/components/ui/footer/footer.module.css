@@ -1,0 +1,11 @@
+.footer {
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--card);
+  border-top: 1px solid var(--border);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
