@@ -19,6 +19,7 @@ export default {
   output: {
     path: path.resolve(dirname, 'dist'),
     clean: true,
+    publicPath: '/',
   },
   module: {
     rules: [
