@@ -1,5 +1,4 @@
 .header {
-  padding: var(--space-sm) var(--space-md);
   background-color: var(--card);
   border-bottom: 1px solid var(--border);
 }
