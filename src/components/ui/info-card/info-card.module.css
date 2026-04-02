@@ -1,0 +1,13 @@
+.info-card header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.icon-wrapper {
+  background-color: var(--background-muted);
+  border-radius: var(--border-radius-sm);
+  padding: var(--space-sm);
+  color: var(--primary);
+}
