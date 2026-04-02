@@ -9,7 +9,7 @@ import {
   REGISTER,
   REHYDRATE,
 } from 'redux-persist';
-import localStorage from 'redux-persist/es/storage';
+import storage from 'redux-persist/es/storage';
 
 import authReducer from '@/features/auth/auth-slice';
 import processesReducer from '@/features/processes/processes-slice';
@@ -18,7 +18,7 @@ import { api } from './api';
 
 const persistConfig = {
   key: 'auth',
-  storage: localStorage,
+  storage,
   blacklist: ['accessToken'],
 };
 const persistedAuthReducer = persistReducer(persistConfig, authReducer);
