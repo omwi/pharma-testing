@@ -1,0 +1,9 @@
+.card-footer {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: space-between;
+}
+
+.button {
+  flex: 1;
+}

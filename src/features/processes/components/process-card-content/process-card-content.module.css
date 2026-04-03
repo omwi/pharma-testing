@@ -1,0 +1,17 @@
+.info-cards-container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--border);
+  /* gap: var(--space-sm); */
+}
+
+.info-card {
+  flex: 1;
+  border: none;
+}
+
+@media (width < 768px) {
+  .info-cards-container {
+    flex-direction: column;
+  }
+}
