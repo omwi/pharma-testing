@@ -1,0 +1,13 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  vertical-align: middle;
+  width: fit-content;
+}
+
+.logo {
+  --logo-color: #0f1353;
+  background-color: var(--logo-color);
+  border-radius: var(--border-radius-sm);
+}
