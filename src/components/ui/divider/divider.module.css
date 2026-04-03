@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+.horizontal-container {
+  flex-direction: row;
+}
+.vertical-container {
+  flex-direction: column;
+}
+
+.divider {
+  background-color: var(--border);
+  flex-basis: 100%;
+}
+.horizontal {
+  height: 1px;
+}
+.vertical {
+  width: 1px;
+}
+
+.partial {
+  flex-basis: max(60%, 100% - 64px);
+}
+
+@media (width < 768px) {
+  .horizontal-container.is-responsive {
+    flex-direction: column;
+  }
+  .vertical-container.is-responsive {
+    flex-direction: row;
+  }
+  .horizontal.is-responsive {
+    width: 1px;
+  }
+  .vertical.is-responsive {
+    height: 1px;
+  }
+}
