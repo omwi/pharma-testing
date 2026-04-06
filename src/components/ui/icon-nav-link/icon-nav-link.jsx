@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router';
 
-import IconContainer from '../icon-container';
+import IconContainer from '../icon-container/icon-container';
 import * as styles from './icon-nav-link.module.css';
 
 export default function IconNavLink({ icon, text, to }) {

@@ -1,5 +1,5 @@
-import IconContainer from '@/components/ui/icon-container';
-import MutedText from '@/components/ui/muted-text';
+import IconContainer from '@/components/ui/icon-container/icon-container';
+import MutedText from '@/components/ui/muted-text/muted-text';
 
 import * as styles from './manufacturer.module.css';
 

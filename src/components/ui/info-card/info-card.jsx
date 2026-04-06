@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 
-import Card from '../card';
-import IconContainer from '../icon-container';
+import Card from '../card/card';
+import IconContainer from '../icon-container/icon-container';
 import * as styles from './info-card.module.css';
 
 export default function InfoCard({ children, icon, title, className }) {

@@ -1,11 +1,11 @@
 import { TZDate } from '@date-fns/tz';
 import { IoCalendarOutline, IoLocationOutline } from 'react-icons/io5';
 
-import DateRange from '@/components/ui/date-range';
-import Divider from '@/components/ui/divider';
-import InfoCard from '@/components/ui/info-card';
-import MutedText from '@/components/ui/muted-text';
-import TimeRange from '@/components/ui/time-range';
+import DateRange from '@/components/ui/date-range/date-range';
+import Divider from '@/components/ui/divider/divider';
+import InfoCard from '@/components/ui/info-card/info-card';
+import MutedText from '@/components/ui/muted-text/muted-text';
+import TimeRange from '@/components/ui/time-range/time-range';
 import { addressToString } from '@/utils/address';
 import { TIME_ZONE } from '@/utils/date';
 

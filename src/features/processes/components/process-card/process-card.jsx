@@ -1,8 +1,8 @@
-import Card from '@/components/ui/card';
-import MutedText from '@/components/ui/muted-text';
+import Card from '@/components/ui/card/card';
+import MutedText from '@/components/ui/muted-text/muted-text';
 
-import ProcessCardContent from '../process-card-content';
-import ProcessCardFooter from '../process-card-footer';
+import ProcessCardContent from '../process-card-content/process-card-content';
+import ProcessCardFooter from '../process-card-footer/process-card-footer';
 
 export default function ProcessCard({
   name,

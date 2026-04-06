@@ -1,7 +1,7 @@
 import { IoCalendarClearOutline } from 'react-icons/io5';
 
-import Button from '@/components/ui/button';
-import IconContainer from '@/components/ui/icon-container';
+import Button from '@/components/ui/button/button';
+import IconContainer from '@/components/ui/icon-container/icon-container';
 
 import * as styles from './process-card-footer.module.css';
 

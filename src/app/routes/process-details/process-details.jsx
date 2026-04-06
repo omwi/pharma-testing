@@ -1,16 +1,13 @@
 import { IoNavigateOutline } from 'react-icons/io5';
 
-import Button from '@/components/ui/button';
-import Container from '@/components/ui/container';
-import Divider from '@/components/ui/divider';
-import IconContainer from '@/components/ui/icon-container';
-import MutedText from '@/components/ui/muted-text';
+import Button from '@/components/ui/button/button';
+import Container from '@/components/ui/container/container';
+import Divider from '@/components/ui/divider/divider';
+import IconContainer from '@/components/ui/icon-container/icon-container';
 import Section from '@/components/ui/section/section';
-import Tag from '@/components/ui/tag';
-import Manufacturer from '@/features/processes/components/manufacturer';
-import ProcessCard from '@/features/processes/components/process-card';
-import ProcessTagsContainer from '@/features/processes/components/process-tags-container';
-import { addressToString } from '@/utils/address';
+import Manufacturer from '@/features/processes/components/manufacturer/manufacturer';
+import ProcessCard from '@/features/processes/components/process-card/process-card';
+import ProcessTagsContainer from '@/features/processes/components/process-tags-container/process-tags-container';
 
 import * as styles from './process-details.module.css';
 

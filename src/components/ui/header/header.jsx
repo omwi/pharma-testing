@@ -2,17 +2,16 @@ import {
   IoGitCompareOutline,
   IoGridOutline,
   IoHomeOutline,
-  IoMenu,
   IoMenuOutline,
 } from 'react-icons/io5';
 import { useSelector } from 'react-redux';
 
 import { selectCurrentUser } from '@/features/auth/auth-slice';
 
-import Avatar from '../avatar';
-import Container from '../container';
-import IconContainer from '../icon-container';
-import IconNavLink from '../icon-nav-link';
+import Avatar from '../avatar/avatar';
+import Container from '../container/container';
+import IconContainer from '../icon-container/icon-container';
+import IconNavLink from '../icon-nav-link/icon-nav-link';
 import * as styles from './header.module.css';
 
 export default function Header() {

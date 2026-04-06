@@ -1,4 +1,4 @@
-import Tag from '@/components/ui/tag';
+import Tag from '@/components/ui/tag/tag';
 
 import * as styles from './process-tags-container.module.css';
 
