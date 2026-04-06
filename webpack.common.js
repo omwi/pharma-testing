@@ -1,3 +1,4 @@
+import Dotenv from 'dotenv-webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'node:path';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
@@ -58,6 +59,7 @@ export default {
     new HtmlWebpackPlugin({
       template: path.resolve(dirname, 'index.html'),
     }),
+    new Dotenv(),
     // new BundleAnalyzerPlugin(),
   ],
 };

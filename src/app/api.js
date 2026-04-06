@@ -2,10 +2,12 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 import { loggedOut, tokenReceived } from '@/features/auth/auth-slice';
 
+import { ABOUT_ME_PATH, BASE_URL, LOGIN_PATH } from './env';
+
 const TOKEN_EXPIRE_MINS = 15;
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'https://dummyjson.com/',
+  baseUrl: BASE_URL,
   prepareHeaders: (headers, { getState }) => {
     const token = getState().auth.accessToken;
     if (token) {
@@ -51,7 +53,7 @@ export const api = createApi({
   endpoints: (builder) => ({
     login: builder.mutation({
       query: ({ username, password }) => ({
-        url: 'auth/login',
+        url: LOGIN_PATH,
         method: 'POST',
         body: {
           username,
@@ -63,7 +65,7 @@ export const api = createApi({
     }),
 
     getMe: builder.query({
-      query: () => ({ url: 'auth/me' }),
+      query: () => ({ url: ABOUT_ME_PATH }),
       providesTags: ['User'],
     }),
   }),
