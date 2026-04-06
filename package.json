@@ -7,7 +7,7 @@
     "dev": "webpack serve --config webpack.dev.js",
     "host": "webpack serve --config webpack.dev.js --host",
     "build": "webpack --config webpack.prod.js",
-    "preview": "sirv dist"
+    "preview": "sirv dist --single"
   },
   "packageManager": "pnpm@10.33.0",
   "dependencies": {
