@@ -1,0 +1,5 @@
+.tag {
+  background-color: var(--background-muted);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xs) var(--space-md);
+}
