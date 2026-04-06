@@ -14,7 +14,7 @@ export default function ProcessCardFooter() {
         <IconContainer>
           <IoCalendarClearOutline />
         </IconContainer>
-        Add to Calendar
+        <span>Add to Calendar</span>
       </Button>
     </footer>
   );

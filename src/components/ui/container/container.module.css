@@ -7,6 +7,6 @@
 
 @media (width < 768px) {
   .container {
-    padding: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
   }
 }

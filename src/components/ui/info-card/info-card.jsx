@@ -8,7 +8,7 @@ export default function InfoCard({ children, icon, title, className }) {
   return (
     <Card className={clsx(styles.infoCard, className)}>
       <header>
-        <IconContainer size={36} className={styles.iconWrapper}>
+        <IconContainer size={40} className={styles.iconWrapper}>
           {icon}
         </IconContainer>
         <h3>{title}</h3>

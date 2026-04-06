@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex: 1;
+  gap: var(--space-md);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.secondary-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+
+  min-width: 200px;
+}
+
+@media (width < 768px) {
+  .container {
+    flex-direction: column;
+  }
+}

@@ -13,7 +13,7 @@ import { useAuth } from '@/hooks/useAuth';
 import DashboardRoute from './routes/dashboard';
 import HomeRoute from './routes/home';
 import LoginRoute from './routes/login';
-import ProcessDetailsRoute from './routes/process-details';
+import ProcessDetailsRoute from './routes/process-details/process-details';
 import ProcessesRoute from './routes/processes';
 
 function ProtedectedRoute() {
