@@ -4,6 +4,7 @@ import Button from '@/components/ui/button/button';
 import Container from '@/components/ui/container/container';
 import Divider from '@/components/ui/divider/divider';
 import IconContainer from '@/components/ui/icon-container/icon-container';
+import MarkeredMap from '@/components/ui/markered-map/markered-map';
 import Section from '@/components/ui/section/section';
 import Manufacturer from '@/features/processes/components/manufacturer/manufacturer';
 import ProcessCard from '@/features/processes/components/process-card/process-card';
@@ -24,6 +25,10 @@ const process = {
     city: 'Brooklyn',
     state: 'New York',
     zip: '11212-5636',
+    coordinates: {
+      lat: 50.06387018266707,
+      lng: 19.928407704961657,
+    },
   },
   manufacturer: 'Serenity Health Clinic',
   tags: ['Medicine #459026', 'Vaccine #78'],
@@ -67,7 +72,7 @@ export default function ProcessDetailsRoute() {
         </Section>
 
         <Section title="Location">
-          <div>google map goes here</div>
+          <MarkeredMap coordinates={address.coordinates} />
           <Button variant="transparent">
             <IconContainer>
               <IoNavigateOutline />
