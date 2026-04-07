@@ -1,0 +1,57 @@
+.select,
+::picker(select) {
+  appearance: none;
+  appearance: base-select;
+  --size: 280px;
+  width: var(--size);
+}
+
+.select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm);
+  background-color: var(--card);
+  border-color: var(--border);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.select:hover,
+.select:open {
+  filter: brightness(0.9);
+}
+.select:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--border);
+}
+.select:active {
+  filter: brightness(0.85);
+}
+
+.select::picker-icon {
+  display: none;
+}
+.chevron {
+  transition: transform 0.3s ease;
+}
+.select:open .chevron {
+  transform: rotate(180deg);
+}
+
+::picker(select) {
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-sm);
+}
+
+.select option::checkmark {
+  display: none;
+}
+.select option {
+  padding: var(--space-xs) var(--space-sm);
+}
+
+.select selectedcontent {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
