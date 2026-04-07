@@ -1,0 +1,35 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.heading {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.sub-title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.sub-title .rate {
+  padding: 0 var(--space-sm);
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  border: 1px solid var(--secondary-foreground);
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
