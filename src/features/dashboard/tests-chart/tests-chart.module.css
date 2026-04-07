@@ -1,0 +1,23 @@
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.chart-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.chart {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
