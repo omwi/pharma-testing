@@ -6,6 +6,7 @@ import {
   ABOUT_ME_PATH,
   BASE_URL,
   LOGIN_PATH,
+  PROCESSES_PATH,
   TOTAL_TESTS_PATH,
   WEEK_SUMMARY_PATH,
 } from './env';
@@ -82,6 +83,10 @@ export const api = createApi({
     getTotalTests: builder.query({
       query: () => ({ url: TOTAL_TESTS_PATH }),
     }),
+
+    getProcesses: builder.query({
+      query: () => ({ url: PROCESSES_PATH }),
+    }),
   }),
 });
 
@@ -90,4 +95,5 @@ export const {
   useGetMeQuery,
   useGetWeekSummaryQuery,
   useGetTotalTestsQuery,
+  useGetProcessesQuery,
 } = api;

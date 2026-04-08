@@ -6,3 +6,4 @@ export const LOGIN_PATH = process.env.LOGIN_PATH;
 export const ABOUT_ME_PATH = process.env.ABOUT_ME_PATH;
 export const WEEK_SUMMARY_PATH = process.env.WEEK_SUMMARY_PATH;
 export const TOTAL_TESTS_PATH = process.env.TOTAL_TESTS_PATH;
+export const PROCESSES_PATH = process.env.PROCESSES_PATH;

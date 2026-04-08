@@ -24,4 +24,12 @@
   --chart-color-1: #3874ff;
   --chart-color-2: #6fcf97;
   --chart-color-3: #ea5555;
+
+  --status-color-1: #3874ff;
+  --status-color-2: #52ef1d;
+  --status-color-3: #ea5555;
+  --status-color-4: #fbf027;
+
+  --success-color: #008000;
+  --failure-color: #de5a50;
 }

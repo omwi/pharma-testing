@@ -12,7 +12,6 @@ import {
 import storage from 'redux-persist/es/storage';
 
 import authReducer from '@/features/auth/auth-slice';
-import processesReducer from '@/features/processes/processes-slice';
 
 import { api } from './api';
 
@@ -27,7 +26,6 @@ const store = configureStore({
   reducer: {
     [api.reducerPath]: api.reducer,
     auth: persistedAuthReducer,
-    processes: processesReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

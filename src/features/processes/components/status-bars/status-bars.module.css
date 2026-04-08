@@ -1,0 +1,21 @@
+.status-bars-container {
+  display: flex;
+  gap: var(--space-xs);
+}
+.bar {
+  height: 4px;
+  border-radius: var(--border-radius-sm);
+}
+
+.status-1 {
+  background-color: var(--status-color-1);
+}
+.status-2 {
+  background-color: var(--status-color-2);
+}
+.status-3 {
+  background-color: var(--status-color-3);
+}
+.status-4 {
+  background-color: var(--status-color-4);
+}

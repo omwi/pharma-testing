@@ -14,7 +14,7 @@ import DashboardRoute from './routes/dashboard/dashboard';
 import HomeRoute from './routes/home';
 import LoginRoute from './routes/login';
 import ProcessDetailsRoute from './routes/process-details/process-details';
-import ProcessesRoute from './routes/processes';
+import ProcessesRoute from './routes/processes/processes';
 
 function ProtedectedRoute() {
   const location = useLocation();

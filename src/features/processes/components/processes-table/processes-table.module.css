@@ -1,0 +1,43 @@
+.table-container {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  color: var(--foreground-muted);
+}
+
+.table th {
+  font-weight: 600;
+  text-align: left;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-sm) 0;
+}
+
+.table tbody tr {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.table tbody tr:hover {
+  background-color: var(--background-muted);
+}
+
+.table td {
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-sm) 0;
+}
+
+.name {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.progress,
+.status {
+  vertical-align: bottom;
+  padding-left: var(--space-xs);
+  padding-right: var(--space-xs);
+}

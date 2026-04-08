@@ -1,0 +1,12 @@
+.icon {
+  border: none;
+  border-radius: 50%;
+  padding: var(--space-xs);
+  background-color: var(--background-muted);
+}
+.success {
+  color: var(--success-color);
+}
+.failure {
+  color: var(--failure-color);
+}
