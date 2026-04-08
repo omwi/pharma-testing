@@ -4,12 +4,12 @@ import * as styles from './legend.module.css';
 
 /**
  * @param {Object} props
- * @param {{name: string, percent: number, fill: string}[]} props.data
+ * @param {{name: string, percent: number, fill: string}[]} props.values
  */
-export default function Legend({ data }) {
+export default function Legend({ values }) {
   return (
     <ul>
-      {data.map((i) => (
+      {values.map((i) => (
         <LegendItem key={i.name} {...i} />
       ))}
     </ul>

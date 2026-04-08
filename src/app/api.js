@@ -2,7 +2,13 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 import { loggedOut, tokenReceived } from '@/features/auth/auth-slice';
 
-import { ABOUT_ME_PATH, BASE_URL, LOGIN_PATH } from './env';
+import {
+  ABOUT_ME_PATH,
+  BASE_URL,
+  LOGIN_PATH,
+  TOTAL_TESTS_PATH,
+  WEEK_SUMMARY_PATH,
+} from './env';
 
 const TOKEN_EXPIRE_MINS = 15;
 
@@ -68,7 +74,20 @@ export const api = createApi({
       query: () => ({ url: ABOUT_ME_PATH }),
       providesTags: ['User'],
     }),
+
+    getWeekSummary: builder.query({
+      query: () => ({ url: WEEK_SUMMARY_PATH }),
+    }),
+
+    getTotalTests: builder.query({
+      query: () => ({ url: TOTAL_TESTS_PATH }),
+    }),
   }),
 });
 
-export const { useLoginMutation, useGetMeQuery } = api;
+export const {
+  useLoginMutation,
+  useGetMeQuery,
+  useGetWeekSummaryQuery,
+  useGetTotalTestsQuery,
+} = api;

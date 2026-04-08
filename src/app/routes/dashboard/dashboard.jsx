@@ -1,13 +1,10 @@
-import Card from '@/components/ui/card/card';
-import ChartCard from '@/components/ui/chart-card/chart-card';
 import Container from '@/components/ui/container/container';
-import Divider from '@/components/ui/divider/divider';
 import MutedText from '@/components/ui/muted-text/muted-text';
-import ApprovalSummaryCard from '@/features/dashboard/approval-summary-card/approval-summary-card';
-import PeopleSummaryCard from '@/features/dashboard/people-summary-card/people-summary-card';
-import ProcessesSummaryCard from '@/features/dashboard/processes-summary-card/processes-summary-card';
-import TestsChart from '@/features/dashboard/tests-chart/tests-chart';
-import TotalSummaryCard from '@/features/dashboard/total-summary-card/total-summary-card';
+import ApprovalSummaryCard from '@/features/dashboard/components/approval-summary-card/approval-summary-card';
+import PeopleSummaryCard from '@/features/dashboard/components/people-summary-card/people-summary-card';
+import ProcessesSummaryCard from '@/features/dashboard/components/processes-summary-card/processes-summary-card';
+import TestsChart from '@/features/dashboard/components/tests-chart/tests-chart';
+import TotalSummaryCard from '@/features/dashboard/components/total-summary-card/total-summary-card';
 
 import * as styles from './dashboard.module.css';
 

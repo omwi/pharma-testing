@@ -2,38 +2,36 @@ import { Pie, PieChart, Tooltip } from 'recharts';
 
 import ChartCard from '@/components/ui/chart-card/chart-card';
 import Legend from '@/components/ui/legend/legend';
-import { shortenNumber } from '@/utils/string';
+import { rateToStr } from '@/utils/string';
 
+import { usePeopleSummary } from '../../hooks/usePeopleSummary';
 import * as styles from './people-summary-card.module.css';
 
 export default function PeopleSummaryCard() {
-  const stats = {
-    tested: 30,
-    target: 100,
-  };
+  const { data, isLoading, isFetching, isUninitialized } = usePeopleSummary();
 
-  const data = [
-    { name: 'Tested', value: stats.tested, fill: 'var(--chart-color-1)' },
+  if (isLoading || isFetching || isUninitialized) return null;
+
+  const values = [
+    {
+      name: 'Tested',
+      percent: data.testedPercent,
+      fill: 'var(--chart-color-1)',
+    },
     {
       name: 'Non tested',
-      value: stats.target - stats.tested,
+      percent: data.nonTestedPercent,
       fill: 'var(--background-muted)',
     },
   ];
-
-  const legendData = data.map((i) => ({
-    name: i.name,
-    percent: i.value / stats.target,
-    fill: i.fill,
-  }));
 
   return (
     <ChartCard title="Number of people tested" subTitle="Last 7 days">
       <PieChart responsive className={styles.chart}>
         <Pie
-          data={data}
-          dataKey="value"
-          nameKey="name"
+          data={values}
+          dataKey={(v) => v.percent}
+          nameKey={(v) => v.name}
           cx="50%"
           cy="70%"
           innerRadius={73}
@@ -44,13 +42,13 @@ export default function PeopleSummaryCard() {
           stroke="none"
         >
           <Tooltip
-            formatter={shortenNumber}
+            formatter={rateToStr}
             itemStyle={{ color: 'var(--primary' }}
           />
         </Pie>
       </PieChart>
 
-      <Legend data={legendData} />
+      <Legend values={values} />
     </ChartCard>
   );
 }
