@@ -107,7 +107,6 @@ export default function ProcessesSummaryCard() {
           paddingAngle={4}
           startAngle={90}
           endAngle={-270}
-          fill="var(--chart-color-1)"
         >
           <Label
             position="center"

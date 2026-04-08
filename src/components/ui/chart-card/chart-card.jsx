@@ -11,11 +11,11 @@ export default function ChartCard({ children, title, subTitle, total, rate }) {
       <header className={styles.header}>
         <h3 className={styles.heading}>
           <span>{title}</span>
-          <span>{shortenNumber(total)}</span>
+          {total && <span>{shortenNumber(total)}</span>}
         </h3>
         <p className={styles.subTitle}>
           <MutedText as="span">{subTitle}</MutedText>
-          <Tag className={styles.rate} text={rateToStr(rate)} />
+          {rate && <Tag className={styles.rate} text={rateToStr(rate)} />}
         </p>
       </header>
       <div className={styles.content}>{children}</div>
