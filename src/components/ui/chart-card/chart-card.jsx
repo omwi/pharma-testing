@@ -18,7 +18,7 @@ export default function ChartCard({ children, title, subTitle, total, rate }) {
           {rate && <Tag className={styles.rate} text={rateToStr(rate)} />}
         </p>
       </header>
-      <div className={styles.content}>{children}</div>
+      {children}
     </Card>
   );
 }

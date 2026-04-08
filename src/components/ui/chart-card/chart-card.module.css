@@ -28,8 +28,3 @@
   color: var(--secondary-foreground);
   border: 1px solid var(--secondary-foreground);
 }
-
-.content {
-  display: flex;
-  justify-content: center;
-}

@@ -1,6 +1,7 @@
 import { Bar, BarChart, Tooltip } from 'recharts';
 
 import ChartCard from '@/components/ui/chart-card/chart-card';
+import Legend from '@/components/ui/legend/legend';
 
 import * as styles from './total-summary-card.module.css';
 
@@ -47,6 +48,17 @@ export default function TotalSummaryCard() {
     percent: i.total > 0 ? Math.floor((i.ready / i.total) * 100) : 0,
   }));
 
+  const total = stats.reduce((acc, i) => acc + i.total, 0);
+  const ready = stats.reduce((acc, i) => acc + i.ready, 0);
+  const legendData = [
+    { name: 'Completed', percent: ready / total, fill: 'var(--chart-color-1)' },
+    {
+      name: 'Awaiting results',
+      percent: (total - ready) / total,
+      fill: 'var(--background-muted)',
+    },
+  ];
+
   return (
     <ChartCard
       title="Total tested drugs"
@@ -64,6 +76,7 @@ export default function TotalSummaryCard() {
         />
         <Tooltip />
       </BarChart>
+      <Legend data={legendData} />
     </ChartCard>
   );
 }

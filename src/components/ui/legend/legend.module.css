@@ -1,0 +1,20 @@
+.legend-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.legend-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--foreground-muted);
+}
+
+.legend-color {
+  display: inline-block;
+  width: 24px;
+  height: 12px;
+  flex-shrink: 0;
+  border-radius: var(--border-radius-sm);
+}

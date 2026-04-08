@@ -1,6 +1,7 @@
 import { Label, Pie, PieChart, Tooltip } from 'recharts';
 
 import ChartCard from '@/components/ui/chart-card/chart-card';
+import Legend from '@/components/ui/legend/legend';
 import { rateToStr, shortenNumber } from '@/utils/string';
 
 import * as styles from './processes-summary-card.module.css';
@@ -76,29 +77,29 @@ export default function ProcessesSummaryCard() {
   const data = [
     {
       name: 'Preclinical testing',
-      value: sum.preclinical / sum.total,
+      percent: sum.preclinical / sum.total,
       fill: 'var(--chart-color-1)',
     },
     {
       name: 'Clinical testing',
-      value: sum.clinical / sum.total,
+      percent: sum.clinical / sum.total,
       fill: 'var(--chart-color-2)',
     },
     {
       name: 'Regulatory testing',
-      value: sum.regulatory / sum.total,
+      percent: sum.regulatory / sum.total,
       fill: 'var(--chart-color-3)',
     },
   ];
 
-  const labelValue = rateToStr(Math.max(...data.map((i) => i.value)));
+  const labelValue = rateToStr(Math.max(...data.map((i) => i.percent)));
 
   return (
     <ChartCard title="Testing process" subTitle="Last 7 days">
       <PieChart responsive className={styles.chart}>
         <Pie
           data={data}
-          dataKey="value"
+          dataKey="percent"
           nameKey="name"
           cx="50%"
           cy="50%"
@@ -120,6 +121,7 @@ export default function ProcessesSummaryCard() {
           <Tooltip formatter={rateToStr} />
         </Pie>
       </PieChart>
+      <Legend data={data} />
     </ChartCard>
   );
 }

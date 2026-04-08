@@ -37,6 +37,7 @@ pre {
 
 *:not(dialog) {
   margin: 0;
+  padding: 0;
 }
 
 body,
@@ -52,8 +53,8 @@ dd {
   margin-block-end: 0;
 }
 
-ul[role='list'],
-ol[role='list'] {
+ul,
+ol {
   list-style: none;
 }
 
