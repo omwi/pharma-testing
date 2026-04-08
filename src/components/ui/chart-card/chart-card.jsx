@@ -1,11 +1,9 @@
-import { rateToStr } from '@/utils/string';
+import { rateToStr, shortenNumber } from '@/utils/string';
 
 import Card from '../card/card';
 import MutedText from '../muted-text/muted-text';
 import Tag from '../tag/tag';
 import * as styles from './chart-card.module.css';
-
-const formatter = new Intl.NumberFormat('en-US', { notation: 'compact' });
 
 export default function ChartCard({ children, title, subTitle, total, rate }) {
   return (
@@ -13,7 +11,7 @@ export default function ChartCard({ children, title, subTitle, total, rate }) {
       <header className={styles.header}>
         <h3 className={styles.heading}>
           <span>{title}</span>
-          <span>{formatter.format(total)}</span>
+          <span>{shortenNumber(total)}</span>
         </h3>
         <p className={styles.subTitle}>
           <MutedText as="span">{subTitle}</MutedText>

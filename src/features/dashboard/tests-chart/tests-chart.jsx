@@ -2,6 +2,7 @@ import { CartesianGrid, Line, LineChart, Tooltip, XAxis } from 'recharts';
 
 import MutedText from '@/components/ui/muted-text/muted-text';
 import Select from '@/components/ui/select/select';
+import { dateToShort } from '@/utils/string';
 
 import * as styles from './tests-chart.module.css';
 
@@ -38,15 +39,10 @@ const stats = [
   { date: '2026-06-30T00:00:00Z', total: 20, target: 28 },
 ];
 
-const dateFormatter = new Intl.DateTimeFormat('en', {
-  month: 'short',
-  day: 'numeric',
-});
-
 export default function TestsChart() {
   const data = stats.map((d) => ({
     ...d,
-    date: dateFormatter.format(new Date(d.date)),
+    date: dateToShort(d.date),
   }));
 
   const ticks = [
