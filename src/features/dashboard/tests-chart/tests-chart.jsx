@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { CartesianGrid, Line, LineChart, Tooltip, XAxis } from 'recharts';
 
 import MutedText from '@/components/ui/muted-text/muted-text';
@@ -39,7 +40,7 @@ const stats = [
   { date: '2026-06-30T00:00:00Z', total: 20, target: 28 },
 ];
 
-export default function TestsChart() {
+export default function TestsChart({ className }) {
   const data = stats.map((d) => ({
     ...d,
     date: dateToShort(d.date),
@@ -52,7 +53,7 @@ export default function TestsChart() {
   ];
 
   return (
-    <article className={styles.chartContainer}>
+    <article className={clsx(styles.chartContainer, className)}>
       <header className={styles.chartHeader}>
         <div className={styles.chartTitle}>
           <h2>Total Tests</h2>

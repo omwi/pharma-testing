@@ -10,7 +10,7 @@ import {
 import AppLayout from '@/components/layouts/app-layout';
 import { useAuth } from '@/hooks/useAuth';
 
-import DashboardRoute from './routes/dashboard';
+import DashboardRoute from './routes/dashboard/dashboard';
 import HomeRoute from './routes/home';
 import LoginRoute from './routes/login';
 import ProcessDetailsRoute from './routes/process-details/process-details';

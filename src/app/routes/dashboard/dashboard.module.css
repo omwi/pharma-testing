@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.left-pane {
+  grid-row: span 2;
+}
+
+@media (width < 1440px) and (width >= 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .left-pane {
+    grid-column: span 2;
+  }
+}
+
+@media (width < 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
