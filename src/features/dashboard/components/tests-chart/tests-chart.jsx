@@ -2,7 +2,6 @@ import clsx from 'clsx';
 import { CartesianGrid, Line, LineChart, Tooltip, XAxis } from 'recharts';
 
 import MutedText from '@/components/ui/muted-text/muted-text';
-import Select from '@/components/ui/select/select';
 import { dateToShort } from '@/utils/string';
 
 import useTestsData from '../../hooks/useTestsData';
@@ -26,7 +25,6 @@ export default function TestsChart({ className }) {
           <h2>Total Tests</h2>
           <MutedText>Testing results received in all areas</MutedText>
         </div>
-        <Select options={['May 2026', 'June 2026', 'July 2026']} />
       </header>
 
       <LineChart data={data} responsive className={styles.chart}>
