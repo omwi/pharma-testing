@@ -6,13 +6,11 @@ import ProcessesGridItem from '../processes-grid-item/processes-grid-item';
 import * as styles from './processes-grid.module.css';
 
 export default function ProcessesGrid() {
-  const { data, isLoading, isFetching, isUninitialized } = useProcesses();
-
-  if (isLoading || isFetching || isUninitialized) return null;
+  const { data } = useProcesses();
 
   const ITEMS_PER_PAGE = 8;
   const { pageItems, total, page, setPage } = usePagination(
-    data,
+    data ?? [],
     ITEMS_PER_PAGE,
   );
 

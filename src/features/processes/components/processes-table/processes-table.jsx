@@ -11,12 +11,11 @@ import StatusBars from '../status-bars/status-bars';
 import * as styles from './processes-table.module.css';
 
 export default function ProcessesTable() {
-  const { data, isLoading, isFetching, isUninitialized } = useProcesses();
-  if (isLoading || isFetching || isUninitialized) return null;
+  const { data } = useProcesses();
 
   const ITEMS_PER_PAGE = 10;
   const { pageItems, total, page, setPage } = usePagination(
-    data,
+    data ?? [],
     ITEMS_PER_PAGE,
   );
 
