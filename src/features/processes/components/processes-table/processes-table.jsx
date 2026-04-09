@@ -1,7 +1,9 @@
 import { useNavigate } from 'react-router';
 
+import Pagination from '@/components/ui/pagination/pagination';
 import ProgressBar from '@/components/ui/progress-bar/progress-bar';
 import StatusIcon from '@/components/ui/status-icon/status-icon';
+import { usePagination } from '@/hooks/usePagination';
 import { dateToStr } from '@/utils/string';
 
 import { useProcesses } from '../../hooks/useProcesses';
@@ -9,12 +11,22 @@ import StatusBars from '../status-bars/status-bars';
 import * as styles from './processes-table.module.css';
 
 export default function ProcessesTable() {
+  const { data, isLoading, isFetching, isUninitialized } = useProcesses();
+  if (isLoading || isFetching || isUninitialized) return null;
+
+  const ITEMS_PER_PAGE = 10;
+  const { pageItems, total, page, setPage } = usePagination(
+    data,
+    ITEMS_PER_PAGE,
+  );
+
   return (
     <div className={styles.tableContainer}>
       <table className={styles.table}>
         <TableHead />
-        <TableBody />
+        <TableBody items={pageItems} />
       </table>
+      <Pagination current={page} total={total} onClick={setPage} />
     </div>
   );
 }
@@ -35,13 +47,10 @@ function TableHead() {
   );
 }
 
-function TableBody() {
-  const { data, isLoading, isFetching, isUninitialized } = useProcesses();
-  if (isLoading || isFetching || isUninitialized) return null;
-
+function TableBody({ items }) {
   return (
     <tbody>
-      {data.map((item) => (
+      {items.map((item) => (
         <TableRow key={item.id} {...item} />
       ))}
     </tbody>
