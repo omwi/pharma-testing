@@ -1,3 +1,4 @@
+import Dotenv from 'dotenv-webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { mergeWithRules } from 'webpack-merge';
 
@@ -27,5 +28,8 @@ export default mergeWithRules(mergeConfig)(commonConfig, {
       },
     ],
   },
-  plugins: [new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' })],
+  plugins: [
+    new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
+    new Dotenv({ systemvars: true }),
+  ],
 });

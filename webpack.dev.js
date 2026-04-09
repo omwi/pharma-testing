@@ -1,4 +1,5 @@
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 import { mergeWithRules } from 'webpack-merge';
 
 import commonConfig, { mergeConfig } from './webpack.common.js';
@@ -38,5 +39,5 @@ export default mergeWithRules(mergeConfig)(commonConfig, {
     hot: true,
     historyApiFallback: true,
   },
-  plugins: [new ReactRefreshPlugin()],
+  plugins: [new ReactRefreshPlugin(), new Dotenv()],
 });
