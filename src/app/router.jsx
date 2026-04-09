@@ -1,37 +1,19 @@
-import {
-  BrowserRouter,
-  Navigate,
-  Outlet,
-  Route,
-  Routes,
-  useLocation,
-} from 'react-router';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
 
 import AppLayout from '@/components/layouts/app-layout';
-import { useAuth } from '@/hooks/useAuth';
+import { ProtedectedRoute } from '@/components/layouts/protected-route';
 
 import DashboardRoute from './routes/dashboard/dashboard';
-import HomeRoute from './routes/home';
-import LoginRoute from './routes/login';
+import LoginRoute from './routes/login/login';
 import ProcessDetailsRoute from './routes/process-details/process-details';
 import ProcessesRoute from './routes/processes/processes';
-
-function ProtedectedRoute() {
-  const location = useLocation();
-  const auth = useAuth();
-  if (!auth) {
-    return <Navigate to="/login" state={{ from: location.pathname }} replace />;
-  }
-
-  return <Outlet />;
-}
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<AppLayout />}>
-          <Route path="/" element={<HomeRoute />} />
+          <Route path="/" element={<DashboardRoute />} />
           <Route path="/login" element={<LoginRoute />} />
           <Route element={<ProtedectedRoute />}>
             <Route path="/dashboard" element={<DashboardRoute />} />

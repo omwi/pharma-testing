@@ -1,21 +1,29 @@
+import { useRef, useState } from 'react';
 import {
   IoGitCompareOutline,
   IoGridOutline,
-  IoHomeOutline,
   IoMenuOutline,
 } from 'react-icons/io5';
-import { useSelector } from 'react-redux';
 
-import { selectCurrentUser } from '@/features/auth/auth-slice';
+import LoginButton from '@/features/auth/components/login-button/login-button';
+import LogoutButton from '@/features/auth/components/logout-button/logout-button';
+import { useAuth } from '@/features/auth/hooks/useAuth';
 
 import Avatar from '../avatar/avatar';
 import Container from '../container/container';
 import IconContainer from '../icon-container/icon-container';
 import IconNavLink from '../icon-nav-link/icon-nav-link';
+import PopupMenu from '../popup-menu/popup-menu';
 import * as styles from './header.module.css';
 
 export default function Header() {
-  const user = useSelector(selectCurrentUser);
+  const auth = useAuth();
+
+  const avatarRef = useRef(null);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  function toggleUserMenu() {
+    setIsUserMenuOpen((prev) => !prev);
+  }
 
   return (
     <header className={styles.header}>
@@ -26,7 +34,6 @@ export default function Header() {
           </IconContainer>
         </div>
         <nav>
-          <IconNavLink text="Home" to="/" icon={<IoHomeOutline />} />
           <IconNavLink
             text="Dashboard"
             to="/dashboard"
@@ -40,9 +47,19 @@ export default function Header() {
         </nav>
         <div className={styles.actions}>
           <Avatar
-            src={user?.image}
-            alt={user ? `${user.firstName} ${user.lastName}` : ''}
+            ref={avatarRef}
+            onClick={toggleUserMenu}
+            className={styles.avatar}
+            src={auth?.image}
+            alt={auth ? `${auth.firstName} ${auth.lastName}` : ''}
           />
+          <PopupMenu
+            anchorRef={avatarRef}
+            isOpen={isUserMenuOpen}
+            toggle={toggleUserMenu}
+          >
+            {auth ? <LogoutButton /> : <LoginButton />}
+          </PopupMenu>
         </div>
       </Container>
     </header>

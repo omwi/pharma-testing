@@ -17,10 +17,10 @@
 }
 
 .actions {
-  flex-grow: 1;
-  flex-basis: 0;
+  flex: 1;
   display: flex;
   gap: 1rem;
+  position: relative;
 }
 
 .actions:first-child {
@@ -37,11 +37,20 @@
 
 .menu-button {
   color: var(--foreground-muted);
+  cursor: pointer;
 }
 .menu-button:hover,
 .menu-button:focus {
-  cursor: pointer;
   color: var(--foreground);
+}
+
+.avatar {
+  cursor: pointer;
+}
+.avatar:hover,
+.avatar:focus-visible {
+  filter: brightness(0.9);
+  box-shadow: 0 0 0 2px var(--border);
 }
 
 @media (width < 768px) {

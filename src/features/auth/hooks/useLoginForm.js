@@ -3,9 +3,7 @@ import { useLocation, useNavigate } from 'react-router';
 
 import { useLoginMutation } from '@/app/api';
 
-import * as styles from './auth-form.module.css';
-
-export default function AuthForm() {
+export function useLoginForm() {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from || '/';
@@ -35,32 +33,5 @@ export default function AuthForm() {
     });
   }
 
-  return (
-    <form onSubmit={handleSubmit} className={isLoading ? styles.loading : ''}>
-      <label htmlFor="name">Name</label>
-      <input
-        value={formData.username}
-        onChange={handleInputChange}
-        id="name"
-        name="username"
-        type=""
-        placeholder="Name"
-        required
-      />
-
-      <label id="password" htmlFor="password">
-        Password
-      </label>
-      <input
-        value={formData.password}
-        onChange={handleInputChange}
-        id="password"
-        name="password"
-        type="password"
-        placeholder="Password"
-        required
-      />
-      <button type="submit">Login</button>
-    </form>
-  );
+  return { formData, handleInputChange, handleSubmit, isLoading };
 }

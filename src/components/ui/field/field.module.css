@@ -1,0 +1,17 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.label {
+  font-size: 0.875rem;
+  color: var(--foreground);
+}
+
+.input {
+  padding: var(--space-sm);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-sm);
+  font-size: 1rem;
+}

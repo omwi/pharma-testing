@@ -1,0 +1,21 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+
+  gap: var(--space-xl);
+}
+
+.form h1 {
+  text-align: center;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.loading {
+  opacity: 0.5;
+}
