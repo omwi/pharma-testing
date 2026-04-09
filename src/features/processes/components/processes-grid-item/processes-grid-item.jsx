@@ -38,16 +38,16 @@ export default function ProcessesGridItem({
 
         <div className={styles.content}>
           <p>
-            <span className={styles.muted}>Location</span>
-            <span>{location}</span>
+            <span className={styles.label}>Location</span>
+            <span className={styles.value}>{location}</span>
           </p>
           <p>
-            <span className={styles.muted}>Start</span>
-            <span>{fromStr}</span>
+            <span className={styles.label}>Start</span>
+            <span className={styles.value}>{fromStr}</span>
           </p>
           <p>
-            <span className={styles.muted}>End</span>
-            <span>{toStr}</span>
+            <span className={styles.label}>End</span>
+            <span className={styles.value}>{toStr}</span>
           </p>
         </div>
 

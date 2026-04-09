@@ -43,11 +43,10 @@
   gap: var(--space-md);
 }
 
-.muted {
+.label {
   color: var(--foreground-muted);
 }
-
-.content .muted {
+.value {
   text-align: end;
 }
 
