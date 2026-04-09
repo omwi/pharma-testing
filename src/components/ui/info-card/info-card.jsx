@@ -11,7 +11,7 @@ export default function InfoCard({ children, icon, title, className }) {
         <IconContainer size={40} className={styles.iconWrapper}>
           {icon}
         </IconContainer>
-        <h3>{title}</h3>
+        <h2>{title}</h2>
       </header>
       {children}
     </Card>
