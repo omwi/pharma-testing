@@ -90,7 +90,10 @@ export const api = createApi({
     }),
 
     getProcessDetails: builder.query({
-      query: (processId) => ({ url: PROCESS_DETAILS_PATH }),
+      query: (processId) => ({
+        url: PROCESS_DETAILS_PATH,
+        params: { id: processId },
+      }),
     }),
   }),
 });
