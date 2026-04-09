@@ -3,6 +3,7 @@ import MutedText from '@/components/ui/muted-text/muted-text';
 
 import ProcessCardContent from '../process-card-content/process-card-content';
 import ProcessCardFooter from '../process-card-footer/process-card-footer';
+import * as styles from './process-card.module.css';
 
 export default function ProcessCard({
   name,
@@ -14,7 +15,7 @@ export default function ProcessCard({
   return (
     <Card>
       <header>
-        <h1>{name}</h1>
+        <h1 className={styles.heading}>{name}</h1>
         <MutedText>{location}</MutedText>
       </header>
 
