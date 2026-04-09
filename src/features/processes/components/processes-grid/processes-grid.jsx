@@ -16,7 +16,7 @@ export default function ProcessesGrid() {
 
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles.itemsContainer}>
         {pageItems.map((item) => (
           <ProcessesGridItem key={item.id} {...item} />
         ))}
