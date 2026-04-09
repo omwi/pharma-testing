@@ -16,9 +16,9 @@ export default function AppRouter() {
     <BrowserRouter>
       <Routes>
         <Route element={<AppLayout />}>
-          <Route path="/" element={<DashboardRoute />} />
           <Route path="/login" element={<LoginRoute />} />
           <Route element={<ProtedectedRoute />}>
+            <Route path="/" element={<DashboardRoute />} />
             <Route path="/dashboard" element={<DashboardRoute />} />
             <Route path="/processes" element={<ProcessesRoute />} />
             <Route path="/processes/:id" element={<ProcessDetailsRoute />} />
