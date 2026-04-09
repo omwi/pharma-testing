@@ -1,5 +1,7 @@
 import { IoNavigateOutline } from 'react-icons/io5';
+import { useParams } from 'react-router';
 
+import { useGetProcessDetailsQuery } from '@/app/api';
 import Button from '@/components/ui/button/button';
 import Container from '@/components/ui/container/container';
 import Divider from '@/components/ui/divider/divider';
@@ -12,30 +14,12 @@ import ProcessTagsContainer from '@/features/processes/components/process-tags-c
 
 import * as styles from './process-details.module.css';
 
-const process = {
-  id: 1,
-  name: 'Migracalm-X - New drug testing for chronic migraine',
-  description:
-    'We will be conducting clinical trials of the new drug "Migracalm-X," which is designed to treat acute forms of migraines. We are going to test its effectiveness on 200 patients who have been suffering from this disorder for many years. The upcoming clinical trials will allow us to evaluate the safety and efficacy of the drug, as well as obtain important data for its registration and release on the market.',
-  location: 'Tavern on the Greend, New York',
-  startDate: '2026-06-01T09:00:00.000Z',
-  endDate: '2026-06-04T18:00:00.000Z',
-  address: {
-    street: '434 Rockaway Ave',
-    city: 'Brooklyn',
-    state: 'New York',
-    zip: '11212-5636',
-    coordinates: {
-      lat: 50.06387018266707,
-      lng: 19.928407704961657,
-    },
-  },
-  manufacturer: 'Serenity Health Clinic',
-  tags: ['Medicine #459026', 'Vaccine #78'],
-};
-
 export default function ProcessDetailsRoute() {
-  // const id = Number.parseInt(useParams().id);
+  const id = useParams().id;
+  const { data, isLoading, isFetching, isUninitialized } =
+    useGetProcessDetailsQuery(id);
+
+  if (isLoading || isFetching || isUninitialized) return null;
 
   const {
     name,
@@ -46,7 +30,7 @@ export default function ProcessDetailsRoute() {
     address,
     manufacturer,
     tags,
-  } = process;
+  } = data;
 
   return (
     <Container className={styles.container}>
