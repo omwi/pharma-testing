@@ -10,6 +10,7 @@ import * as styles from './processes.module.css';
 export default function ProcessesRoute() {
   return (
     <Container className={styles.container}>
+      <Meta />
       <PageHeading
         title="List of medications in development"
         description="Brief summary of testing processes"
@@ -22,5 +23,27 @@ export default function ProcessesRoute() {
         <ProcessesGrid />
       </MediaQuery>
     </Container>
+  );
+}
+
+function Meta() {
+  return (
+    <>
+      <title>
+        Medications in Development | Clinical Trial Progress Tracking
+      </title>
+      <meta
+        name="title"
+        content="Medications in Development | Clinical Trial Progress Tracking"
+      />
+      <meta
+        name="description"
+        content="View the full list of medications and vaccines in development. Track testing status, success rates, and trial timelines across multiple medical facilities."
+      />
+      <meta
+        name="keywords"
+        conten="medication development list, clinical trial status, vaccine testing progress, pharma pipeline analytics, medical research tracking"
+      />
+    </>
   );
 }

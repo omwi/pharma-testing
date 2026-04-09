@@ -34,6 +34,7 @@ export default function ProcessDetailsRoute() {
 
   return (
     <Container className={styles.container}>
+      <Meta />
       <div className={styles.mainContainer}>
         <ProcessCard
           name={name}
@@ -70,5 +71,25 @@ export default function ProcessDetailsRoute() {
         </Section>
       </div>
     </Container>
+  );
+}
+
+function Meta() {
+  return (
+    <>
+      <title>Process Details | Clinical Trial Progress Tracking</title>
+      <meta
+        name="title"
+        content="Process Details | Clinical Trial Progress Tracking"
+      />
+      <meta
+        name="description"
+        content="Access detailed information regarding current clinical trials, including testing locations, study timelines, and participant requirements for new medical treatments."
+      />
+      <meta
+        name="keywords"
+        conten="clinical trials, medical testing, pharmaceutical research, drug safety study, healthcare event, vaccine development tracking"
+      />
+    </>
   );
 }
