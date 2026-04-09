@@ -10,8 +10,9 @@ import { useLoginForm } from '../../hooks/useLoginForm';
 import * as styles from './auth-form.module.css';
 
 export default function AuthForm() {
-  const { isLoading, handleSubmit, handleInputChange, formData } =
+  const { isLoading, handleSubmit, handleInputChange, formData, errorMessage } =
     useLoginForm();
+  const isError = errorMessage !== null;
 
   const formClasses = clsx(styles.form, {
     [styles.loading]: isLoading,
@@ -31,6 +32,7 @@ export default function AuthForm() {
             onChange={handleInputChange}
             type="text"
             required
+            isError={isError}
           />
           <Field
             id="password"
@@ -40,7 +42,14 @@ export default function AuthForm() {
             onChange={handleInputChange}
             type="password"
             required
+            isError={isError}
           />
+          <div
+            role="alert"
+            className={clsx(styles.errorMessage, { [styles.visible]: isError })}
+          >
+            {errorMessage}
+          </div>
         </div>
 
         <Button>

@@ -22,6 +22,16 @@
   opacity: 0.5;
 }
 
+.error-message {
+  display: none;
+  text-align: center;
+  color: var(--failure-color);
+  font-weight: 600;
+}
+.error-message.visible {
+  display: block;
+}
+
 @media (width < 600px) {
   .card {
     width: 100%;

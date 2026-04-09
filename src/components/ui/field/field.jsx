@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import * as styles from './field.module.css';
 
 export function Field({
@@ -9,6 +11,7 @@ export function Field({
   type = 'text',
   placeholder,
   required = false,
+  isError = false,
 }) {
   return (
     <div className={styles.field}>
@@ -23,7 +26,7 @@ export function Field({
         type={type}
         placeholder={placeholder}
         required={required}
-        className={styles.input}
+        className={clsx(styles.input, { [styles.error]: isError })}
       />
     </div>
   );

@@ -15,15 +15,22 @@ export function useLoginForm() {
     password: '',
   });
 
+  const [errorMessage, setErrorMessage] = useState(null);
+
   async function handleSubmit(e) {
     e.preventDefault();
+    setErrorMessage(null);
     const { username, password } = formData;
     try {
       await login({ username, password }).unwrap();
+      navigate(from, { replace: true });
     } catch (error) {
-      console.error(error);
+      if (error.status === 400) {
+        setErrorMessage(error.data.message);
+      } else {
+        setErrorMessage('Something went wrong');
+      }
     }
-    navigate(from, { replace: true });
   }
 
   function handleInputChange(e) {
@@ -33,5 +40,5 @@ export function useLoginForm() {
     });
   }
 
-  return { formData, handleInputChange, handleSubmit, isLoading };
+  return { formData, handleInputChange, handleSubmit, isLoading, errorMessage };
 }
