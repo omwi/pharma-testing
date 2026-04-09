@@ -1,8 +1,10 @@
+.card {
+  width: 400px;
+}
+
 .form {
   display: flex;
   flex-direction: column;
-  width: 400px;
-
   gap: var(--space-xl);
 }
 
@@ -20,8 +22,8 @@
   opacity: 0.5;
 }
 
-@media (width < 768px) {
-  .form {
+@media (width < 600px) {
+  .card {
     width: 100%;
   }
 }

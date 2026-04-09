@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import { format } from 'date-fns';
 import { IoLogInOutline } from 'react-icons/io5';
 
 import Button from '@/components/ui/button/button';
@@ -19,7 +18,7 @@ export default function AuthForm() {
   });
 
   return (
-    <Card>
+    <Card className={styles.card}>
       <form onSubmit={handleSubmit} className={formClasses}>
         <h1>Login</h1>
 
