@@ -1,12 +1,9 @@
-import { useMemo } from 'react';
-
 import { useGetWeekSummaryQuery } from '@/app/api';
 
 export function usePeopleSummary() {
-  const result = useGetWeekSummaryQuery(undefined, {
+  return useGetWeekSummaryQuery(undefined, {
     selectFromResult: selectResult,
   });
-  return useMemo(() => result, [result]);
 }
 
 function selectResult(result) {

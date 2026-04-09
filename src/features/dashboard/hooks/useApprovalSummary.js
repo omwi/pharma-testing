@@ -1,13 +1,10 @@
-import { useMemo } from 'react';
-
 import { useGetWeekSummaryQuery } from '@/app/api';
 import { dateToShort } from '@/utils/string';
 
 export function useApprovalSummary() {
-  const result = useGetWeekSummaryQuery(undefined, {
+  return useGetWeekSummaryQuery(undefined, {
     selectFromResult: selectResult,
   });
-  return useMemo(() => result, [result]);
 }
 
 function selectResult(result) {
