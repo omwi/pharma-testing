@@ -39,30 +39,32 @@ export default function Header() {
     <header className={styles.header}>
       <Container className={styles.container}>
         <div className={styles.actions}>
-          <span ref={menuRef} onClick={toggleMenu}>
-            <IconContainer size={32} className={styles.menuButton}>
-              <IoMenuOutline />
-            </IconContainer>
-          </span>
-          <PopupMenu
-            anchorRef={menuRef}
-            isOpen={isMenuOpen}
-            toggle={toggleMenu}
-            className={styles.popupRight}
-          >
-            <div className={styles.menuPopupContainer}>
-              <IconNavLink
-                text="Dashboard"
-                to="/dashboard"
-                icon={<IoGridOutline />}
-              />
-              <IconNavLink
-                text="Processes"
-                to="/processes"
-                icon={<IoGitCompareOutline />}
-              />
-            </div>
-          </PopupMenu>
+          <div className={clsx({ [styles.hidden]: !isSmallScreen })}>
+            <span ref={menuRef} onClick={toggleMenu}>
+              <IconContainer size={32} className={styles.menuButton}>
+                <IoMenuOutline />
+              </IconContainer>
+            </span>
+            <PopupMenu
+              anchorRef={menuRef}
+              isOpen={isMenuOpen}
+              toggle={toggleMenu}
+              className={styles.popupRight}
+            >
+              <div className={styles.menuPopupContainer}>
+                <IconNavLink
+                  text="Dashboard"
+                  to="/dashboard"
+                  icon={<IoGridOutline />}
+                />
+                <IconNavLink
+                  text="Processes"
+                  to="/processes"
+                  icon={<IoGitCompareOutline />}
+                />
+              </div>
+            </PopupMenu>
+          </div>
         </div>
         <nav className={clsx(styles.nav, { [styles.hidden]: isSmallScreen })}>
           <IconNavLink
