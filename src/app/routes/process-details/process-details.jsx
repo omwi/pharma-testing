@@ -1,3 +1,4 @@
+import { ErrorBoundary } from 'react-error-boundary';
 import { IoNavigateOutline } from 'react-icons/io5';
 import { useParams } from 'react-router';
 
@@ -57,13 +58,15 @@ export default function ProcessDetailsRoute() {
         </Section>
 
         <Section title="Location">
-          <MarkeredMap coordinates={address.coordinates} />
-          <Button variant="transparent">
-            <IconContainer>
-              <IoNavigateOutline />
-            </IconContainer>
-            <span>Get Directions</span>
-          </Button>
+          <ErrorBoundary fallback={<p>Failed to load map</p>}>
+            <MarkeredMap coordinates={address.coordinates} />
+            <Button variant="transparent">
+              <IconContainer>
+                <IoNavigateOutline />
+              </IconContainer>
+              <span>Get Directions</span>
+            </Button>
+          </ErrorBoundary>
         </Section>
 
         <Section title="Tags">
