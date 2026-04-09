@@ -1,3 +1,4 @@
+import CopyPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'node:path';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
@@ -57,6 +58,14 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(dirname, 'index.html'),
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(dirname, 'public'),
+          to: path.resolve(dirname, 'dist'),
+        },
+      ],
     }),
     // new BundleAnalyzerPlugin(),
   ],
