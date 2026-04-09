@@ -12,14 +12,12 @@
 .actions {
   flex: 1;
   display: flex;
-  gap: 1rem;
+  gap: var(--space-md);
   position: relative;
 }
-
 .actions:first-child {
   justify-content: flex-start;
 }
-
 .actions:last-child {
   justify-content: flex-end;
 }
@@ -31,8 +29,12 @@
   align-items: center;
 }
 
+.menu-button-wrapper {
+  display: flex;
+  align-items: center;
+}
 .menu-button {
-  color: var(--foreground-muted);
+  color: var(--foreground);
   cursor: pointer;
 }
 .menu-button:hover,

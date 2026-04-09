@@ -40,7 +40,11 @@ export default function Header() {
       <Container className={styles.container}>
         <div className={styles.actions}>
           <div className={clsx({ [styles.hidden]: !isSmallScreen })}>
-            <span ref={menuRef} onClick={toggleMenu}>
+            <span
+              ref={menuRef}
+              onClick={toggleMenu}
+              className={styles.menuButtonWrapper}
+            >
               <IconContainer size={32} className={styles.menuButton}>
                 <IoMenuOutline />
               </IconContainer>
